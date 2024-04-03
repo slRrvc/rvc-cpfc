@@ -1,0 +1,24 @@
+version: '4.0'
+
+services:
+  rvccpfcapp:
+    container_name: rvccpfcapp
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ./rvccpfcapp:/rvccpfcapp/
+      - ./data/web/static:/data/web/static/
+      - ./data/web/media:/data/web/media/
+    env_file:
+      - ./dotenv_files/.env
+    depends_on:
+      - rvcpsql
+  rvcpsql:
+    container_name: rvcpsql
+    image: postgres:13-alpine
+    volumes:
+      - ./data/postgres/data:/var/lib/postgresql/data/
+    env_file:
+      - ./dotenv_files/.env
