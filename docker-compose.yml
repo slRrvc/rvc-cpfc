@@ -14,9 +14,9 @@ services:
     env_file:
       - ./dotenv_files/.env
     depends_on:
-      - rvcpsql
-  rvcpsql:
-    container_name: rvcpsql
+      - cpfcpsql
+  cpfcpsql:
+    container_name: cpfcpsql
     image: postgres:13-alpine
     volumes:
       - ./data/postgres/data:/var/lib/postgresql/data/

@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cpfc',
-    'cpfcSetup',
+    'rvccpf',
+    # 'rvccpfSetup',
 ]
 
 MIDDLEWARE = [
