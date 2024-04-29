@@ -1,3 +1,7 @@
 from django.contrib import admin
+from rcvcpfsetup.models import ConfigApp
 
-# Register your models here.
+
+@admin.register(ConfigApp)
+class ConfigAppAdimn(admin.ModelAdmin):
+    list_display = 'application', 'nameapp', 'description',
